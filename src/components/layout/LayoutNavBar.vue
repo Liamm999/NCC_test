@@ -16,7 +16,9 @@
       >
     </div>
     <div class="navContainer__nav--secondary" @click="setDisplay">
-      Click here to open side bar
+      <div class="slash"></div>
+      <div class="slash"></div>
+      <div class="slash"></div>
     </div>
     <div class="navContainer__content">
       <div class="navContainer__main">
@@ -93,12 +95,11 @@ export default {
     }
 
     &--secondary {
-      width: 6rem;
+      display: inline-block;
+      cursor: pointer;
+      width: fit-content;
       margin-top: 2rem;
       margin-left: 2rem;
-      font-size: 12px;
-      color: blue;
-      text-decoration: underline;
     }
 
     @media (max-width: 640px) {
@@ -125,5 +126,12 @@ export default {
 
 .flexDisplay {
   display: flex;
+}
+
+.slash {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
 }
 </style>
