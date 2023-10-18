@@ -20,9 +20,14 @@ export default {
     bottom: 0;
     left: 0;
   }
-
+  
   & p {
     margin: 0 14.75rem;
+
+    @media (max-width: 640px) {
+      text-align: center;
+      margin: 0;
+    }
   }
 }
 </style>
