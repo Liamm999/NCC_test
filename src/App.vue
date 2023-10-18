@@ -2,21 +2,18 @@
   <LayoutNavBar>
     <img alt="logo" src="./assets/logo.png" />
     <ContentElement :elements="elementContent" />
-    <LayoutFooter />
   </LayoutNavBar>
 </template>
 
 <script>
 import ContentElement from "./components/ContentElement.vue";
 import LayoutNavBar from "./components/layout/LayoutNavBar.vue";
-import LayoutFooter from "./components/layout/LayoutFooter.vue";
 
 export default {
   name: "App",
   components: {
     LayoutNavBar,
     ContentElement,
-    LayoutFooter,
   },
 
   data() {

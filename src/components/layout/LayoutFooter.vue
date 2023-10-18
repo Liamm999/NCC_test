@@ -22,11 +22,7 @@ export default {
   }
 
   & p {
-    margin: 0 110px;
-
-    @media (min-width: 1280px) {
-      margin: 0 260px;
-    }
+    margin: 0 14.75rem;
   }
 }
 </style>

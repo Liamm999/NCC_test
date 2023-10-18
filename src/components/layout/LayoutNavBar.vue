@@ -1,10 +1,6 @@
 <template>
   <div class="navContainer">
-    <div
-      class="navContainer__nav"
-      :class="{ flexDisplay: isOpen }"
-      @focusout="setDisplay"
-    >
+    <div class="navContainer__nav" :class="{ flexDisplay: isOpen }">
       <span
         class="navContainer__nav__content"
         :class="{ textWhite: index === 0 }"
@@ -13,19 +9,30 @@
       >
         {{ nav }}
       </span>
+      <span
+        class="navContainer__nav__content navContainer__nav__content--close"
+        @click="setDisplay"
+        >Close</span
+      >
     </div>
     <div class="navContainer__nav--secondary" @click="setDisplay">
       Click here to open side bar
     </div>
-    <div class="navContainer__main">
-      <slot></slot>
+    <div class="navContainer__content">
+      <div class="navContainer__main">
+        <slot></slot>
+      </div>
+      <LayoutFooter />
     </div>
   </div>
 </template>
 
 <script>
+import LayoutFooter from "./LayoutFooter.vue";
+
 export default {
   name: "LayoutNavBar",
+  components: { LayoutFooter },
 
   data() {
     return {
@@ -37,7 +44,6 @@ export default {
   methods: {
     setDisplay() {
       this.isOpen = !this.isOpen;
-      console.log(this.isOpen);
     },
   },
 };
@@ -71,6 +77,18 @@ export default {
       &:hover {
         @extend .textWhite;
         background-color: #5c5c5c;
+      }
+      &--close {
+        display: none;
+        width: 8rem;
+        position: absolute;
+        bottom: 0;
+        border-top: 1px solid #aaa;
+        border-bottom: 0;
+
+        @media (max-width: 640px) {
+          display: block;
+        }
       }
     }
 
