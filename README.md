@@ -1,5 +1,7 @@
 # test
-
+```
+remember to install scss
+```
 ## Project setup
 ```
 yarn install
